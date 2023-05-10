@@ -1,0 +1,54 @@
+
+/* CABEÇALHO */
+.cabecalho__container {
+  /*No container pai, define-se o tipo de display e o tipo de alinhamento dos items da lista */
+  display: flex;
+  justify-content: space-between; /* Alinha dentro do eixo-principal */
+  align-items: center; /* Alinha fora do eixo-principal (eixo-transversal) */
+  position: fixed; /* Informa que a posição desse container será FIXA (ou seja, scrollando o mouse ela continuará lá) */
+  top: 0; /* Necessita passar em que posição será fixo */
+}
+
+.cabecalho__pesquisar__item {
+  display: none; /* A propriedade some */
+} 
+
+/* SUPERIOR SEÇÃO */
+
+.superior__secao__container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* formata e é ideal para formatar texto (igual flex-wrap) */
+  overflow: scroll; /* cria uma barra de rolagem para scrollar dentro do container */
+  gap: 15px; /* gap disponibiliza espaçamento somente ENTRE os itens e não nas laterais igual margin e outros (aplica-se somente no container pai) */
+}
+
+/* .superior__item {
+  margin-right: 15px;
+} */
+
+/* Pega a última classe .superior__item */
+/* .superior__item:last-child {
+  margin-right: 0px;
+} */
+
+/* RODAPE */
+.rodape__container {
+  display: flex;
+  /* flex-direction: column; /* Propriedade do flexbox que altera o eixo (do vertical para horizontal e vice-versa)  */
+  /* flex-wrap: wrap; /* quebra colunas (ou linhas) em mais colunas (ou linhas)  (wrap: quebra) (nowrap: nao quebra) (wrap-reverse: quebra invertido) */
+  flex-flow: column wrap; /* Faz o mesmo que as duas propriedades acima, na mesma linha */
+}
+
+/* @media determina que: quando a tela tiver 834px de largura (min-width) será aplicado o css abaixo  */
+@media (min-width: 834px) {
+  /* CABEÇALHO */
+  .cabecalho__pesquisar__item {
+    display: block; /* valor padrão do display */
+  }
+
+  /* RODAPE */
+  .rodape__container {
+    justify-content: space-between;
+  }
+}
