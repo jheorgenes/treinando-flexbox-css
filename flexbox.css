@@ -13,12 +13,62 @@
   display: none; /* A propriedade some */
 } 
 
+/* MENU LATERAL */
+.menu__container {
+  position: fixed;
+  bottom: 0%;
+  height: 74px;
+  width: 100%;
+}
+
+.menu__lista {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.menu__lista li {
+  align-self: center; /* Propriedade aplicada apenas no ITEM DO CONTEINER, não aplica no CONTAINER */
+}
+
+.menu__itens {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Quando quer especificar quais filhos do container quer pegar  */
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+  display: none; /* Esconde a apresentação do container */
+}
+
+/* MENU LATERAL PARA TELAS DE TABLETS */
+/* Quando a tela tiver o mínimo de 834px vai obdecer o bloco abaixo */
+@media (min-width: 834px) {
+
+  .menu__container {
+    left: 0;
+    height: auto; /* Vai pegar o espaço disponível automaticamente */
+    width: 74px;
+    top: 80px;
+  }
+
+  .menu__lista {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 15px;
+    gap: 33px;
+  }
+}
+
 /* SUPERIOR SEÇÃO */
 
 .superior__secao__container {
   display: flex;
   align-items: center;
-  white-space: nowrap; /* formata e é ideal para formatar texto (igual flex-wrap) */
+  white-space: nowrap; /* No container, os textos que contém mais de uma palavra não irão quebrar em outra linha */
   overflow: scroll; /* cria uma barra de rolagem para scrollar dentro do container */
   gap: 15px; /* gap disponibiliza espaçamento somente ENTRE os itens e não nas laterais igual margin e outros (aplica-se somente no container pai) */
 }
