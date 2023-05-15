@@ -137,7 +137,7 @@
 .videos__item {
   height: 303px;
   width: 280px;
-  flex-grow: 1;
+  flex-grow: 1; /* Especifica quanto o ITEM crescerá em relação ao restante dos itens FLEXÍVEIS do container */
 }
 
 /* DESCRIÇÃO VIDEOS */
